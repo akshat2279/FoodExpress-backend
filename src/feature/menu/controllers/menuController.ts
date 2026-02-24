@@ -14,7 +14,6 @@ export const getMenuController = async (req: Request, res: Response) => {
     const validOffset = typeof offset === 'number' ? offset : parseInt(offset, 10) || 0;
     const validLimit = typeof limit === 'number' ? limit : parseInt(limit, 10) || 10;
     
-    console.log('Pagination params:', { offset: validOffset, limit: validLimit });
     
     const data = await MenuService.getMenu(validOffset, validLimit);
     res.status(200).json({
